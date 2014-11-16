@@ -45,18 +45,22 @@ Following 3 functions are prepared.
   This returns true if match score is higher than limit_similarity.
   When you set true to is_output, you can check matching result with image.
   The image will be created at your current directory.
-```ruby
-perfect_match(image1_filename, image2_filename, limit_similarity=0.9, is_output=false)
-```
+  
+  ```ruby
+  perfect_match(image1_filename, image2_filename, limit_similarity=0.9, is_output=false)
+  ```
+
 2. perfect_match_template
   Try to find template image in scene image.
   This function requires that template image's size is smaller than image2.
   This returns true if match score is higher than limit_similarity.
   When you set true to is_output, you can check matching result with image.
   The output image will be created at your current directory.
-```ruby
-perfect_match_template(scene_filename, template_filename, limit_similarity=0.9, is_output=false)
-```
+  
+  ```ruby
+  perfect_match_template(scene_filename, template_filename, limit_similarity=0.9, is_output=false)
+  ```
+
 3. fuzzy_match_template
   Try to find template image in scene image.
   This function requires that template image's size is smaller(or equal) than image2.
@@ -64,9 +68,10 @@ perfect_match_template(scene_filename, template_filename, limit_similarity=0.9, 
   When you set true to is_output, you can check matching result with image.
   The output image will be created at your current directory.
   Note that ome times this is useful, but accuracy is not so high.
-```ruby
-fuzzy_match_template(scene_filename, template_filename, is_output=false)
-```
+
+  ```ruby
+  fuzzy_match_template(scene_filename, template_filename, is_output=false)
+  ```
 
 ### Sample Code
 
@@ -75,7 +80,7 @@ You can check all files related this sample on samples directory(currently sampl
 
 #### Gemfile
 
-```
+```ruby
 source 'https://rubygems.org'
 
 gem 'capybara'
@@ -85,7 +90,7 @@ gem 'image_match'
 
 #### Main
 
-```
+```ruby
 require 'capybara'
 require 'capybara/poltergeist'
 require 'image_match'

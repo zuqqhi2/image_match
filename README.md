@@ -39,7 +39,7 @@ Basic flow is following.
 
 Following 3 functions are prepared.
 
-1. perfect_match
+1. perfect_match function : 
   Calc match score between image1 and image2.
   This function requires same size image as image1 and image2
   This returns true if match score is higher than limit_similarity.
@@ -50,7 +50,7 @@ Following 3 functions are prepared.
   perfect_match(image1_filename, image2_filename, limit_similarity=0.9, is_output=false)
   ```
 
-2. perfect_match_template
+2. perfect_match_template function : 
   Try to find template image in scene image.
   This function requires that template image's size is smaller than image2.
   This returns true if match score is higher than limit_similarity.
@@ -61,13 +61,13 @@ Following 3 functions are prepared.
   perfect_match_template(scene_filename, template_filename, limit_similarity=0.9, is_output=false)
   ```
 
-3. fuzzy_match_template
+3. fuzzy_match_template function : 
   Try to find template image in scene image.
   This function requires that template image's size is smaller(or equal) than image2.
   This function ignore image size, color and image detail.
   When you set true to is_output, you can check matching result with image.
   The output image will be created at your current directory.
-  Note that ome times this is useful, but accuracy is not so high.
+  Note that some times this is useful I think, but accuracy is not so high currently.
 
   ```ruby
   fuzzy_match_template(scene_filename, template_filename, is_output=false)

@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["zuqqhi2@gmail.com"]
   spec.summary       = %q{Check web page or widget design with image file automatically}
   spec.description   = %q{1.Make page or widget image file. 2.Get current page or widget image on the web. 3.Compare them with this gem.}
-  spec.homepage      = "https://github.com/zuqqhi2/image_diff"
+  spec.homepage      = "https://github.com/zuqqhi2/image_match"
   spec.license       = "The BSD Liscense"
 
   spec.files         = `git ls-files -z`.split("\x0")

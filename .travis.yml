@@ -1,3 +1,13 @@
 language: ruby
 rvm:
   - 1.9.3
+before_script:
+  - bundle install --path=.bundle
+script:
+  - bundle exec rspec spec
+
+notifications:
+  emails:
+    - zuqqhi2@gmail.com
+  on_success: always
+  on_failure: always

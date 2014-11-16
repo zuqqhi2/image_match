@@ -47,7 +47,7 @@ describe ImageMatch do
       # Set is_output
       perfect_match_template(@image_dir + '/lena.jpg', @image_dir + '/lena-eyes.jpg', 0.95, true)
       path = File.expand_path(File.dirname(__FILE__))
-      result = `ls #{path}/*_match_result.png | wc -l`
+      result = `ls #{path}/../*_match_result.png | wc -l`
       expect(result.chomp).to eq "1"
     end
 
@@ -82,7 +82,7 @@ describe ImageMatch do
       # Set is_output
       result = fuzzy_match_template(@image_dir + '/box_in_scene.jpg', @image_dir + '/box.jpg')
       path = File.expand_path(File.dirname(__FILE__))
-      result = `ls #{path}/*_match_result.png | wc -l`
+      result = `ls #{path}/../*_match_result.png | wc -l`
       expect(result.chomp).to eq '1'
     end
 
@@ -103,9 +103,9 @@ describe ImageMatch do
   after :all do
     # Delete created files
     path = File.expand_path(File.dirname(__FILE__))
-    result = `ls #{path}/*_match_result.png | wc -l`
+    result = `ls #{path}/../*_match_result.png | wc -l`
     if result != '0'
-      `rm #{path}/*_match_result.png`
+      `rm #{path}/../*_match_result.png`
     end
   end
 end

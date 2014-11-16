@@ -2,11 +2,21 @@
 
 An simple image match library for view test.
 
+* Ruby 1.9.3 and OpenCV 2.4.10 are supported.
+
+## Requirement
+
+* OpenCV <http://opencv.org/>
+  * [Download](http://sourceforge.net/projects/opencvlibrary/)
+  * [Install guide](http://docs.opencv.org/doc/tutorials/introduction/table_of_content_introduction/table_of_content_introduction.html#table-of-content-introduction)
+* ruby-opencv <https://github.com/ruby-opencv/ruby-opencv>
+
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
+gem 'ruby-opencv'
 gem 'image_match'
 ```
 
@@ -16,6 +26,7 @@ And then execute:
 
 Or install it yourself as:
 
+    $ gem install ruby-opencv
     $ gem install image_match
 
 ## Usage

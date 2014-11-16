@@ -1,3 +1,5 @@
+[![Build Status](https://secure.travis-ci.org/zuqqhi2@gmail.com/image_match.png?branch=master](https://travis-ci.org/zuqqhi2@gmail.com/image_match)
+
 # ImageMatch
 
 An simple image match library for view test.

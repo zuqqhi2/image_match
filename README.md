@@ -36,7 +36,7 @@ Basic flow is following.
 1. Get comparison source and  destination image file.
 2. Compare them with this library.
 
-# Sample Code
+### Sample Code
 
 
 ## Contributing

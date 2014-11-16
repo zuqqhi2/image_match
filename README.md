@@ -31,9 +31,13 @@ Or install it yourself as:
 
 ## Usage
 
-1.Make page or widget image file.
-2.Get current page or widget image on the web.
-3.Compare them with this gem.}
+Basic flow is following.
+
+1. Get comparison source and  destination image file.
+2. Compare them with this library.
+
+# Sample Code
+
 
 ## Contributing
 
@@ -42,6 +46,7 @@ Or install it yourself as:
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin feature/my-new-feature`)
 5. Create a new Pull Request to develop branch
+Note that develop branch is newest version(not release version).
 
 ## LICENSE:
 

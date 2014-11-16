@@ -1,6 +1,6 @@
 # ImageMatch
 
-TODO: Write a gem description
+An simple image match library for view test.
 
 ## Installation
 
@@ -20,7 +20,9 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+1.Make page or widget image file.
+2.Get current page or widget image on the web.
+3.Compare them with this gem.}
 
 ## Contributing
 
@@ -29,3 +31,9 @@ TODO: Write usage instructions here
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create a new Pull Request
+
+## LICENSE:
+
+The BSD Liscense
+
+see LICENSE.txt

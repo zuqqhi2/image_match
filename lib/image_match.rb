@@ -91,6 +91,35 @@ module ImageMatch
 	
 	  dst_corners
 	end
+
+
+  def get_object_location(scene_filename, template_filename)
+	  scene, template = nil, nil
+	  begin  
+	    scene    = IplImage.load(scene_filename, CV_LOAD_IMAGE_GRAYSCALE)
+		  template = IplImage.load(template_filename, CV_LOAD_IMAGE_GRAYSCALE)
+	  rescue
+	    raise RuntimeError, 'Couldn\'t read image files correctly'
+	    return false
+	  end
+	
+	  return nil unless scene.width >= template.width and scene.height >= template.height
+		
+		param = CvSURFParams.new(1500)
+	  template_keypoints, template_descriptors = template.extract_surf(param)
+		scene_keypoints, scene_descriptors       = scene.extract_surf(param)
+		
+		src_corners = [CvPoint.new(0, 0), 
+	                 CvPoint.new(template.width, 0),
+		               CvPoint.new(template.width, template.height),
+	                 CvPoint.new(0, template.height)]
+		return locate_planar_template(template_keypoints, 
+	                                template_descriptors,
+		                              scene_keypoints,
+	                                scene_descriptors,
+	                                src_corners)
+  end
+
 	
 	#====================================================================
 	# Public Interface
@@ -247,6 +276,61 @@ module ImageMatch
 	  end
 	  
 	  return (dst_corners ? true : false)
+	end
+	
+	##
+	#
+	# Calculate matching score of 1st input image and 2nd input image.
+	# The 2nd input image size must be smaller than 1st input image.
+	# This function is robust for brightness and size.
+	#
+	# @param [String] scene_filename     Scene image file path
+	# @param [String] template_filename  template image file path which you want find in scene image
+	# @param [Int] limit_similarity      Accepting similarity (default is 90% matching)
+	# @param [Boolean] is_output         if you set true, you can get match result with image (default is false)
+	# @return [Boolean]                  true  if matching score is higher than limit_similarity
+	#                                    false otherwise
+	#
+	def match_template_ignore_size(scene_filename, template_filename, limit_similarity=0.9, is_output=false)
+	  raise ArgumentError, 'File does not exists.' unless File.exist?(scene_filename) and File.exist?(template_filename)
+	  raise ArgumentError, 'is_output must be true or false.' unless is_output == false or is_output == true
+
+    dst_corners = get_object_location(scene_filename, template_filename)
+    
+	  scene, template = nil, nil
+	  begin  
+	    scene    = IplImage.load(scene_filename)
+		  template = IplImage.load(template_filename)
+	  rescue
+	    raise RuntimeError, 'Couldn\'t read image files correctly'
+	    return false
+	  end
+	
+	  return false unless scene.width >= template.width and scene.height >= template.height
+		
+    if dst_corners
+		  src_corners = [CvPoint.new(0, 0), 
+	                   CvPoint.new(template.width, 0),
+		                 CvPoint.new(template.width, template.height),
+	                   CvPoint.new(0, template.height)]
+
+      resize_width  = (dst_corners[1].x - dst_corners[0].x) - src_corners[1].x
+      resize_height = (dst_corners[3].y - dst_corners[0].y) - src_corners[3].y
+
+      template = template.resize(CvSize.new(template.width + resize_width, template.height + resize_height))
+    end
+
+	  result   = scene.match_template(template, :ccoeff_normed)
+	  min_score, max_score, min_point, max_point = result.min_max_loc
+
+	  if is_output
+	    from = max_point
+	    to = CvPoint.new(from.x + template.width, from.y + template.height)
+	    scene.rectangle!(from, to, :color => CvColor::Red, :thickness => 3)
+	    scene.save_image(Time.now.to_i.to_s + "_match_result.png")
+	  end
+	
+	  return (max_score >= limit_similarity ? true : false)
 	end
 
 end

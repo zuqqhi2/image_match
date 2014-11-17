@@ -135,7 +135,7 @@ end
 
 ```
 
-#### Result(is_output=true)
+#### Result(*_match_result.png)
 
 ![result](https://raw.githubusercontent.com/zuqqhi2/image_match/master/samples/taking_screenshot_and_match/1416131348_match_result.png "result")
 

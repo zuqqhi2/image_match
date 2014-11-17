@@ -1,3 +1,5 @@
+[![Gem Version](https://badge.fury.io/rb/image_match.svg)](http://badge.fury.io/rb/image_match)
+
 # ImageMatch
 
 An simple image match library for view test.
@@ -52,7 +54,7 @@ Following 3 functions are prepared.
 
 2. perfect_match_template function : 
   Try to find template image in scene image.
-  This function requires that template image's size is smaller than image2.
+  This function requires that template image's size is smaller than scene image.
   This returns true if match score is higher than limit_similarity.
   When you set true to is_output, you can check matching result with image.
   The output image will be created at your current directory.
@@ -63,7 +65,7 @@ Following 3 functions are prepared.
 
 3. fuzzy_match_template function : 
   Try to find template image in scene image.
-  This function requires that template image's size is smaller(or equal) than image2.
+  This function requires that template image's size is smaller(or equal) than scene image.
   This function ignore image size, color and image detail.
   When you set true to is_output, you can check matching result with image.
   The output image will be created at your current directory.
@@ -71,6 +73,18 @@ Following 3 functions are prepared.
 
   ```ruby
   fuzzy_match_template(scene_filename, template_filename, is_output=false)
+  ```
+
+4. match_template_ignore_size function : 
+  Try to find template image in scene image.
+  This function requires that template image's size is smaller(or equal) than scene image.
+  This function ignore image size.
+  When you set true to is_output, you can check matching result with image.
+  The output image will be created at your current directory.
+  Note that some times this is useful I think, but accuracy is not so high currently.
+
+  ```ruby
+  match_template_ignore_size(scene_filename, template_filename, limit_similarity=0.9, is_output=false)
   ```
 
 ### Sample Code

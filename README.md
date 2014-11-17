@@ -79,6 +79,7 @@ Following 3 functions are prepared.
   Try to find template image in scene image.
   This function requires that template image's size is smaller(or equal) than scene image.
   This function ignore image size.
+  It means you can match when your template image's size is not same compared with one in scene image.
   When you set true to is_output, you can check matching result with image.
   The output image will be created at your current directory.
   Note that some times this is useful I think, but accuracy is not so high currently.
@@ -92,9 +93,7 @@ Following 3 functions are prepared.
 A sample to take screen shot on http://google.com/ and compare screen shot and prepared logo image.
 You can check all files related this sample on samples directory(currently sample is only one).
 
-#### Gemfile
-
-```ruby
+```ruby:Gemfile
 source 'https://rubygems.org'
 
 gem 'capybara'
@@ -102,9 +101,7 @@ gem 'poltergeist'
 gem 'image_match'
 ```
 
-#### Main
-
-```ruby
+```ruby:sample.rb
 require 'capybara'
 require 'capybara/poltergeist'
 require 'image_match'
@@ -125,13 +122,16 @@ session.visit(url)
 session.save_screenshot('screenshot.png', full: true)
 
 # Compare logo (output match result image)
+# Only 1 line can match with template.
 if perfect_match_template('./screenshot.png', './google-logo.jpg', 0.9, true)
-  puts "Same!"
+  puts "Exists!"
 else
-  puts "Different..."
+  puts "Nothing..."
 end
 
 ```
+
+![result](https://raw.githubusercontent.com/zuqqhi2/image_match/master/samples/taking_screenshot_and_match/1416131348_match_result.png "result")
 
 ## Contributing
 

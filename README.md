@@ -122,7 +122,7 @@ session.visit(url)
 session.save_screenshot('screenshot.png', full: true)
 
 # Compare logo (output match result image)
-# Source code related this library is following only 1 line
+# Main source code related this library is following only 1 line
 if perfect_match_template('./screenshot.png', './google-logo.jpg', 0.9, true)
   puts "Exists!"
 else

@@ -93,7 +93,9 @@ Following 3 functions are prepared.
 A sample to take screen shot on http://google.com/ and compare screen shot and prepared logo image.
 You can check all files related this sample on samples directory(currently sample is only one).
 
-```ruby:Gemfile
+#### Gemfile
+
+```ruby
 source 'https://rubygems.org'
 
 gem 'capybara'
@@ -101,7 +103,9 @@ gem 'poltergeist'
 gem 'image_match'
 ```
 
-```ruby:sample.rb
+#### sample.rb
+
+```ruby
 require 'capybara'
 require 'capybara/poltergeist'
 require 'image_match'
@@ -130,6 +134,8 @@ else
 end
 
 ```
+
+#### Result(is_output=true)
 
 ![result](https://raw.githubusercontent.com/zuqqhi2/image_match/master/samples/taking_screenshot_and_match/1416131348_match_result.png "result")
 

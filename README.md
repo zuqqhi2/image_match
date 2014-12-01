@@ -9,7 +9,7 @@ An simple image match library for view test.
 ## Requirement
 
 * OpenCV <http://opencv.org/>
-  * [Download](http://sourceforge.net/projects/opencvlibrary/)
+  * [Download](http://opencv.org/downloads.html)
   * [Install guide](http://docs.opencv.org/doc/tutorials/introduction/table_of_content_introduction/table_of_content_introduction.html#table-of-content-introduction)
 
 ## Installation of this library

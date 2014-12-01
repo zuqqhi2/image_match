@@ -2,7 +2,7 @@ language: ruby
 rvm:
   - 1.9.3
 before_install:
-  - sudo apt-get install libopencv-dev
+  - sudo apt-get install libopencv-dev imagemagick
 before_script:
   - bundle install --path=.bundle
 script:

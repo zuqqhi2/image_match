@@ -15,7 +15,7 @@ before_install:
 before_script:
   - bundle install --path=.bundle
 script:
-  - bundle exec rspec spec
+  - bundle exec rspec spec/
 
 notifications:
   emails:

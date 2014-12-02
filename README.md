@@ -1,4 +1,5 @@
 [![Gem Version](https://badge.fury.io/rb/image_match.svg)](http://badge.fury.io/rb/image_match)
+[![Build Status](https://travis-ci.org/zuqqhi2/image_match.svg?branch=master)](https://travis-ci.org/zuqqhi2/image_match)
 
 # ImageMatch
 

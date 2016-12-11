@@ -132,7 +132,7 @@ module ImageMatch
   #
   # @param [String] image1_filename    Compare target image1 file path 
   # @param [String] image2_filename    Compare target image2 file path 
-  # @param [Int] limit_similarity      Accepting similarity (default is 90% matching)
+  # @param [Float] limit_similarity    Accepting similarity (default is 90% matching)
   # @return [Boolean]                  true  if matching score is higher than limit_similarity
   #                                    false otherwise
   #
@@ -162,7 +162,7 @@ module ImageMatch
   #
   # @param [String] scene_filename     Scene image file path
   # @param [String] template_filename  template image file path which you want find in scene image
-  # @param [Int] limit_similarity      Accepting similarity (default is 90% matching)
+  # @param [Float] limit_similarity    Accepting similarity (default is 90% matching)
   # @param [Boolean] is_output         if you set true, you can get match result with image (default is false)
   # @return [Boolean]                  true  if matching score is higher than limit_similarity
   #                                    false otherwise
@@ -286,7 +286,7 @@ module ImageMatch
   #
   # @param [String] scene_filename     Scene image file path
   # @param [String] template_filename  template image file path which you want find in scene image
-  # @param [Int] limit_similarity      Accepting similarity (default is 90% matching)
+  # @param [Float] limit_similarity    Accepting similarity (default is 90% matching)
   # @param [Boolean] is_output         if you set true, you can get match result with image (default is false)
   # @return [Boolean]                  true  if matching score is higher than limit_similarity
   #                                    false otherwise

@@ -1,10 +1,12 @@
 [![Gem Version](https://badge.fury.io/rb/image_match.svg)](http://badge.fury.io/rb/image_match)
+[![Build Status](https://travis-ci.org/zuqqhi2/image_match.svg?branch=master)](https://travis-ci.org/zuqqhi2/image_match)
 
 # ImageMatch
 
 An simple image match library for view test.
 
-* Ruby 1.9.3 and OpenCV 2.4.10 are supported.
+* Ruby 2.3.3 and OpenCV 2.4.10 are tested.
+* Ruby 1.9.3 and OpenCV 2.4.10 are tested.
 
 ## Requirement
 

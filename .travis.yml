@@ -1,6 +1,6 @@
 language: ruby
 rvm:
-  - 1.9.3
+  - 2.3.3
 before_install:
   - sudo apt-get install libopencv-dev imagemagick cmake build-essential libjpeg-dev
   - wget http://sourceforge.net/projects/opencvlibrary/files/opencv-unix/2.4.9/opencv-2.4.9.zip
@@ -12,6 +12,7 @@ before_install:
   - make
   - sudo make install
   - sudo ldconfig
+  - gem update bundler
 before_script:
   - bundle install --path=.bundle
 script:

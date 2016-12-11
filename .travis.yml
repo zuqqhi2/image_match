@@ -12,6 +12,7 @@ before_install:
   - make
   - sudo make install
   - sudo ldconfig
+  - cd ../../
   - gem update bundler
 before_script:
   - bundle install --path=.bundle
